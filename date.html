@@ -22,13 +22,13 @@
 
     <script>
       document.getElementById("dateForm").addEventListener("submit", function (e) {
-        e.preventDefault(); // 🚫 stop form submit
+        e.preventDefault(); 
 
         const selectedDate = document.getElementById("confessionDate").value;
         const correctDate = "2025-10-08";
 
         if (selectedDate === correctDate) {
-          window.location.href = "food.html"; // ⚠️ must match filename EXACTLY
+          window.location.href = "food.html"; 
         } else {
           alert("Wrong date 😏 hala ka :< you disappointed me. balika...");
         }
