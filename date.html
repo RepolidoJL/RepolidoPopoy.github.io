@@ -6,31 +6,33 @@
     <title>Date</title>
     <link rel="stylesheet" href="css/date.css" />
   </head>
-  <body>
-    <h1 title="choose a date">Can you confirm the date when I confessed to you, mikay?</h1>
-     <form class="form-group" onsubmit="return validateDate()">
-  <label>Which day: (select a date cutie.. )</label>
-  <div>
-    <input type="date" id="confessionDate" required />
-    <button class="button" type="submit">
-      Next
-    </button>
-  </div>
-</form>
 
-<script>
-      function validateDate() {
+  <body>
+    <h1 title="choose a date">
+      Can you confirm the date when I confessed to you, mikay?
+    </h1>
+
+    <form class="form-group" id="dateForm">
+      <label>Which day: (select a date cutie.. )</label>
+      <div>
+        <input type="date" id="confessionDate" required />
+        <button class="button" type="submit">Submit</button>
+      </div>
+    </form>
+
+    <script>
+      document.getElementById("dateForm").addEventListener("submit", function (e) {
+        e.preventDefault(); // 🚫 stop form submit
+
         const selectedDate = document.getElementById("confessionDate").value;
-        const correctDate = "2025-08-08"; // 08/08/25
+        const correctDate = "2025-08-08";
 
         if (selectedDate === correctDate) {
-          window.location.href = "food.html";
-          return false; // stop default submit
+          window.location.href = "food.html"; // ⚠️ must match filename EXACTLY
         } else {
-          alert("Wrong date 😏 Hala ka !! you disappoint me. :< balika...");
-          return false; // block navigation
+          alert("Wrong date 😏 hala ka :< you disappointed me. balika...");
         }
-      }
+      });
     </script>
   </body>
 </html>
