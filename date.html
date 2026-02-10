@@ -8,14 +8,29 @@
   </head>
   <body>
     <h1 title="choose a date">Can you confirm the date when I confessed to you, mikay?</h1>
-    <form class="form-group">
-      <label>Which day: (select a date cutie.. )</label>
-      <div>
-        <input type="date" />
-        <button class="button" type="submit" formaction="food.html">
-          Submit
-        </button>
-      </div>
-    </form>
+     <form class="form-group" onsubmit="return validateDate()">
+  <label>Which day: (select a date cutie.. )</label>
+  <div>
+    <input type="date" id="confessionDate" required />
+    <button class="button" type="submit">
+      Next
+    </button>
+  </div>
+</form>
+
+<script>
+      function validateDate() {
+        const selectedDate = document.getElementById("confessionDate").value;
+        const correctDate = "2025-08-08"; // 08/08/25
+
+        if (selectedDate === correctDate) {
+          window.location.href = "food.html";
+          return false; // stop default submit
+        } else {
+          alert("Wrong date 😏 Hala ka !! you disappoint me. :< balika...");
+          return false; // block navigation
+        }
+      }
+    </script>
   </body>
 </html>
